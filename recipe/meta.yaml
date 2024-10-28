@@ -1,5 +1,5 @@
 {% set name = "absolv" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/SimonBoothroyd/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 38d6e037fb1af8ba4c89ff24e81cd608bf9f6e428c73eb96209aee0b14219f7e
+  sha256: d82086b2c0e60a04a45e4029a8c159e3d4f80bfe358104667f8c4cb76e3d202b
 
 build:
   number: 0
@@ -22,6 +22,8 @@ outputs:
       host:
         - python >=3.10
         - pip
+        - setuptools
+        - setuptools_scm >=8
       run:
         - python >=3.10
         - pydantic >=2
