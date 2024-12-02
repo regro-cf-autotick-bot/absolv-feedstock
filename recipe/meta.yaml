@@ -1,5 +1,5 @@
 {% set name = "absolv" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/SimonBoothroyd/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: d4e600897538022f0ad0fb4c36cb1b94ab5c0435232cf6d7a805b295e875e9c1
+  sha256: 20b8e4ac4e9a43445ebb34722f0bbb21cad3ef27a456a38d0dc51effd0cafada
 
 build:
   number: 0
