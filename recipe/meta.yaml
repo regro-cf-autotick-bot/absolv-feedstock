@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "absolv" %}
 {% set version = "1.0.4" %}
 
@@ -10,7 +11,7 @@ source:
   sha256: 20b8e4ac4e9a43445ebb34722f0bbb21cad3ef27a456a38d0dc51effd0cafada
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name|lower }}-base
@@ -20,12 +21,12 @@ outputs:
 
     requirements:
       host:
-        - python >=3.10
+        - python {{ python_min }}
         - pip
         - setuptools
         - setuptools_scm >=8
       run:
-        - python >=3.10
+        - python >={{ python_min }}
         - pydantic >=2
         - tqdm
         - openff-toolkit-base >=0.13.0
@@ -39,6 +40,8 @@ outputs:
         - openff-toolkit >=0.13.0
 
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - absolv
 
@@ -48,14 +51,16 @@ outputs:
 
     requirements:
       host:
-        - python >=3.10
+        - python {{ python_min }}
       run:
-        - python >=3.10
+        - python >={{ python_min }}
         - rdkit
         - ambertools
         - {{ pin_subpackage('absolv-base', exact=True) }}
 
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - absolv
 
